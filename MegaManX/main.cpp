@@ -3,60 +3,26 @@
 #include <iostream>
 #include <vector>
 #include <numeric>
-#include <chrono>
+#include <thread>    
 
-#include "current_time.h"
+#include "Game.h"
 
 using namespace std;
-using namespace std::chrono;
 
 string version = "0.0";
 string title = "Mega Man X v" + version + " - Created By Alex Gray and Bryan Hayes";
-bool devMode = true;
 
-void init() {
-	// Setup stuff here
-
+void start() {
+	cout << "Starting" << endl;
+	Game theGame(title);
+	theGame.gameLoop();
 }
-
 
 int main()
 {
-	init();
-	//long lastTime = static_cast<long> (std::chrono::high_resolution_clock::now());
-	double ticksPerSecond = 60.0;
-	double ns = 1000000000 / ticksPerSecond;
-	double delta = 0;
+	thread theThread(start);
 
-	int updates = 0;
-	int frames = 0;
-	long timer = static_cast<long> (time(NULL));
-
-	double frameDelta = 0;
-	double frameNS = 1000000000 / 60;
-
-	while (true) {
-		long now = static_cast<long> (time(NULL));
-		delta += (now - lastTime) / frameNS;
-	}
-
-	sf::RenderWindow window(sf::VideoMode(1024, 976), title); // Resolution is the Mega Man X on SNES but increased 4 times
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
-
-	while (window.isOpen())
-	{
-		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
-
-		window.clear();
-		window.draw(shape);
-		window.display();
-	}
+	theThread.join();
 
 	return 0;
 }
