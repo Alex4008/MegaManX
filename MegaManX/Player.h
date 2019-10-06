@@ -10,18 +10,18 @@
 #include "current_time.h"
 
 using namespace std;
+using namespace sf;
 
 class Player {
-public:
+private:
 	sf::Texture texture;
 	sf::Vector2f pos;
 	sf::Sprite x;
 
-	void loadSprite(string, sf::IntRect);
-	sf::Sprite getSprite();
+public: 
+	void render(sf::RenderWindow&, string);
+	void tick(sf::Keyboard);
 	
-
 	Player() {
-		pos = sf::Vector2f(0, 0);
 	}
 };

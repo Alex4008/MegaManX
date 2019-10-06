@@ -1,4 +1,7 @@
 #include "Game.h"
+#include "Player.h"
+
+Player x;
 
 Game::Game(string title = "", string version = "") {
 	running = true;
@@ -28,7 +31,8 @@ void Game::render() {
 	Game::window.clear();
 	// Render calls go here
 
-
+	x.render(Game::window, "C:\\Users\\Bryan\\Desktop\\Desktop\\MegaManx\\MegaManX\\MegaMan X Sprites\\megaman.png");
+	x.tick(keyboard);
 
 	// End render calls
 	Text top("Mega Man X v" + version, gameFont, 16);

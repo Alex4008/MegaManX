@@ -27,6 +27,7 @@ private:
 	Keyboard keyboard;
 	Font gameFont;
 
+
 public:
 	Game(string, string);
 	void tick();
