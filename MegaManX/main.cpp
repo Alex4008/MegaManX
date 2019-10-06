@@ -14,7 +14,7 @@ string title = "Mega Man X v" + version + " - Created By Alex Gray and Bryan Hay
 
 void start() {
 	cout << "Starting" << endl;
-	Game theGame(title);
+	Game theGame(title, version);
 	theGame.gameLoop();
 }
 

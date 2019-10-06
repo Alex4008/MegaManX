@@ -23,9 +23,12 @@ private:
 	RenderWindow window;
 	RectangleShape rect;
 	string title;
+	string version;
+	Keyboard keyboard;
+	Font gameFont;
 
 public:
-	Game(string);
+	Game(string, string);
 	void tick();
 	void render();
 	void gameLoop();
