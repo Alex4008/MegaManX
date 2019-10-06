@@ -1,4 +1,7 @@
 #include "Game.h"
+#include "Player.h"
+
+Player x;
 
 Game::Game(string title = "") {
 	running = true;
@@ -22,7 +25,9 @@ void Game::tick() {
 void Game::render() {
 	cout << "Rendering" << endl;
 	Game::window.clear();
-	Game::window.draw(rect);
+	x.render(Game::window, "C:\\Users\\Bryan\\Desktop\\Desktop\\MegaManx\\MegaManX\\MegaMan X Sprites\\megaman.png");
+	x.tick(keyboard);
+	//Game::window.draw(rect);
 	Game::window.display();
 }
 

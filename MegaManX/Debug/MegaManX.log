@@ -1,0 +1,11 @@
+﻿  Player.cpp
+c:\users\bryan\desktop\desktop\megamanx\megamanx\megamanx\player.cpp(16): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+  MegaManX.vcxproj -> C:\Users\Bryan\Desktop\Desktop\MegaManx\MegaManX\Debug\MegaManX.exe

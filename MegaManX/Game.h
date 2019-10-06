@@ -23,6 +23,7 @@ private:
 	RenderWindow window;
 	RectangleShape rect;
 	string title;
+	Keyboard keyboard;
 
 public:
 	Game(string);
